@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/List_item1">
+    <ImageView android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:id="@+id/ImageView1"
+        android:src="@drawable/ic_launcher_foreground"
+        />
+    <TextView
+        android:id="@+id/TextView1"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="Hello Dear"
+        android:textSize="30dp"
+        android:layout_toRightOf="@+id/ImageView1"
+        android:gravity="center"/>
+</RelativeLayout>

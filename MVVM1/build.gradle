@@ -13,6 +13,12 @@ buildscript {
         // in the individual module build.gradle files
     }
 }
+ext {
+    roomVersion = '2.2.1'
+    archLifecycleVersion = '2.2.0-rc2'
+    coreTestingVersion = '2.1.0'
+    materialVersion = '1.0.0'
+}
 
 allprojects {
     repositories {

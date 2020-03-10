@@ -1,9 +1,14 @@
 package com.example.mvvm1.Models;
 
-import retrofit2.http.Url;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
+import retrofit2.http.Url;
+@Entity(tableName = "image_table")
 public class Image {
+
     private int albumId;
+    @PrimaryKey
     private int id;
     private String title;
     private String url;

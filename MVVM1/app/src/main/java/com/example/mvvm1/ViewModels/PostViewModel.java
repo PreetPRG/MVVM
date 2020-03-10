@@ -3,6 +3,7 @@ package com.example.mvvm1.ViewModels;
 import android.app.Application;
 import android.content.Context;
 
+import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
@@ -18,25 +19,28 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class PostViewModel extends ViewModel {
+public class PostViewModel extends AndroidViewModel {
 
     PostRepository postRepository;
     LiveData<List<PostModel>> postData;
     LiveData<List<Image>> images;
 
-    public PostViewModel()
+    public PostViewModel(Application application)
     {
-        postRepository=PostRepository.getInstance();
-        postData=postRepository.getPosts();
+        super(application);
+
+    }
+
+//    public LiveData<List<PostModel>> getPosts()
+//    {
+//        return postData;
+//    }
+
+    public LiveData<List<Image>> getImages(){
+        postRepository=PostRepository.getInstance(getApplication());
+        //postData=postRepository.getPosts();
         images=postRepository.getImages();
-    }
-
-    public LiveData<List<PostModel>> getPosts()
-    {
-        return postData;
-    }
-
-    public LiveData<List<Image>> getImages(){return images;}
+        return images;}
 
 
 }
